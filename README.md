@@ -1,2 +1,0 @@
-# CSSnackStore
-snax
