@@ -1,5 +1,3 @@
-//Stopped at 31:00
-
 if(document.readyState == 'loading'){
     document.addEventListener('DOMContentLoaded', ready)
 } else{
@@ -25,6 +23,17 @@ function ready() {
         var button = addToCartButtons[i]
         button.addEventListener('click', addToCartClicked)
     }
+
+    document.getElementsByClassName('btn-purchase')[0]('click', purchaseClicked)
+}
+
+function purchaseClicked(){
+    alert('Thank your for your purchase')
+    var cartItems = document.getElementsByClassName('cart-items')[0]
+    while (cartItems.hasChildNodes ()){
+        cartItems.removeChild(cartItems.firstChild)
+    }
+    updateCartTotal()
 }
 
 function removeCartItem(event) {
@@ -49,13 +58,28 @@ function addToCartClicked(event) {
     var imageSrc = shopItem.getElementsByClassName('shop-item-image')[0].src
     console.log(title, price, imageSrc)
     addItemToCart(title, price, imageSrc)
+    updateCartTotal()
 }
 
 function addItemToCart(title, price, imageSrc){
     var cartRow = document.createElement('div')
+    cartRow.classList.add('cart-row')
     carRow.innerText = title
     var cartItems = document.getElementsByClassName('cart-items')[0]
-    cartItems.append(carRow)
+    var cartItmeNames = cartItems.getElementsByClassName('cart-item-title')
+    for (var i = 0; i < cartItmeNames.length; i++){
+        if(cartItmeNames[i].innerText == title){
+            alert('This item has already been added to the cart')
+            return
+        }
+    }
+    var cartRowContent = //`put the cart-row html in here 31:00 in vid`
+    cartRow.innerHTML = cartRowContents
+    cartItems.append(cartRow)
+    cartRow.getElementsByClassName('btn-danger')[0].addEventListener('click',
+    removeCartItem)
+    cartRow.getElementsByClassName('cart-quantity-input')[0].addEventListener
+    ('change', quantityChanged)
 }
 
 function updateCartTotal(){
