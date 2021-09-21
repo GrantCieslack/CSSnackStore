@@ -47,6 +47,9 @@ function quantityChanged(event) {
     if (isNaN(input.value) || input.value <= 0) {
         input.value = 1
     }
+    else if (input.value >= 6){
+        input.value = 5
+    }
     updateCartTotal()
 }
 
@@ -81,7 +84,7 @@ function addItemToCart(title, price, imageSrc){
     </div>
     <span class="cart-price cart-column">${price}</span>
     <div class="cart-quantity cart-column">
-        <input class="cart-quantity-input" type="number" value="2">
+        <input class="cart-quantity-input" type="number" value="1">
         <button class="btn btn-danger" type="button">REMOVE</button>
     </div>'`
     cartRow.innerHTML = cartRowContent
@@ -96,7 +99,7 @@ function updateCartTotal(){
     var cartItemContainer = document.getElementsByClassName('cart-items')[0]
     var cartRows = cartItemContainer.getElementsByClassName('cart-row')
     var total = 0
-    for (var i = o; i < cartRows.length; i++){
+    for (var i = 0; i < cartRows.length; i++){
         var cartRow = cartRows[i]
         var priceElement = cartRow.getElementsByClassName('cart-price')[0]
         var quantityElement = cartRow.getElementsByClassName('cart-quantity-input')
