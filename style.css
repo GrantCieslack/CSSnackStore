@@ -1,1 +1,34 @@
+#dew{
+    background-image:url("Images/MoutainDew24.jpeg");
+    background-size: 100% 100%;
+    width: 100px;
+    height: 100px;
+}
+#cheese{
+    background-image:url("Images/normalCheese.jpg");
+    background-size: 100% 100%;
+    width: 100px;
+    height: 100px;
+}
 
+#morecheese{
+    background-image:url("Images/cheeseIt.jpg");
+    background-size: 100% 100%;
+    width: 100px;
+    height: 100px;
+}
+
+#gummy{
+    background-image:url("Images/motsGummy.jpeg");
+    background-size: 100% 100%;
+    width: 100px;
+    height: 100px;
+
+}
+#goldfish{
+    background-image:url("Images/rainbowgolf.jpg");
+    background-size: 100% 100%;
+    width: 100px;
+    height: 100px;
+
+}
