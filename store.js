@@ -46,6 +46,7 @@ function quantityChanged(event) {
     var input = event.target
     if (isNaN(input.value) || input.value <= 0) {
         input.value = 1
+
         alert("There's a remove button for a reason")
     }
     else if (input.value >= 6){
@@ -69,7 +70,6 @@ function addToCartClicked(event) {
 function addItemToCart(title, price, imageSrc){
     var cartRow = document.createElement('div')
     cartRow.classList.add('cart-row')
-
     cartRow.innerText = title
     var cartItems = document.getElementsByClassName('cart-items')[0]
     var cartItmeNames = cartItems.getElementsByClassName('cart-item-title')

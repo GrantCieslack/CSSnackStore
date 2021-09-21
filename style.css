@@ -1,3 +1,20 @@
+
+@import url('https://fonts.googleapis.com/css?family=Raleway:300,400,700');
+@import url("https://fonts.googleapis.com/css?family=Metal+Mania");
+
+@font-face {
+    font-family: "Booter - Zero Zero";
+    src: url("Fonts/Booter - Zero Zero.woff") format("woff"),
+         url("Fonts/Booter - Zero Zero.woff2") format("woff2");
+    font-weight: normal;
+    font-style: normal;
+}
+
+* {
+    box-sizing: border-box;
+    font-family: Raleway;
+    color: #777;
+}
 #dew{
     background-image:url("Images/MoutainDew24.jpeg");
     background-size: 100% 100%;
@@ -32,21 +49,19 @@
     height: 100px;
 
 }
-@import url('https://fonts.googleapis.com/css?family=Raleway:300,400,700');
-@import url("https://fonts.googleapis.com/css?family=Metal+Mania");
+#miniTartChock{
+    background-image:url("Images/tartChock.jpeg");
+    background-size: 100% 100%;
+    width: 100px;
+    height: 100px;
 
-@font-face {
-    font-family: "Booter - Zero Zero";
-    src: url("Fonts/Booter - Zero Zero.woff") format("woff"),
-         url("Fonts/Booter - Zero Zero.woff2") format("woff2");
-    font-weight: normal;
-    font-style: normal;
 }
+#miniTartberry{
+    background-image:url("Images/tartSharry.jpeg");
+    background-size: 100% 100%;
+    width: 100px;
+    height: 100px;
 
-* {
-    box-sizing: border-box;
-    font-family: Raleway;
-    color: #777;
 }
 
 html, body {
@@ -74,7 +89,8 @@ html, body {
     text-align: center;
     font-size: 1.1em;
     font-weight: lighter;
-    border-bottom: 1px solid rgba(255, 255, 255, .3)
+    border-bottom: 1px solid;
+
 }
 
 .main-nav li {
@@ -82,29 +98,22 @@ html, body {
 }
 
 .nav a:hover {
-    background-color: rgba(255, 255, 255, .3)
+    background-color: #333;
 }
 
 .main-header {
-    background-color: rgba(0, 0, 0, .6);
-    background-image: url("Images/Header Background.jpg");
-    background-blend-mode: multiply;
+    background-color: #1677C3;
     background-size: cover;
-    padding-bottom: 30px;
+    padding-bottom: 1px;
+    
+    
 }
-
-.band-name {
+h1{
+    color: #333;
     text-align: center;
-    margin: 0;
-    font-size: 4em;
-    font-family: "Booter - Zero Zero";
-    font-weight: normal;
-    color: white;
+    font-size: 3em;
 }
 
-.band-name-large {
-    font-size: 8em;
-}
 
 .content-section {
     margin: 1em;
@@ -116,19 +125,11 @@ html, body {
     padding: 0 1.5em;
 }
 .section-header {
-    font-family: "Metal Mania";
+
     font-weight: normal;
     color: #333;
     text-align: center;
     font-size: 2.5em;
-}
-
-.about-band-image {
-    float: left;
-    height: 200px;
-    width: 200px;
-    margin: 15px;
-    border-radius: 50%;
 }
 
 .main-footer {
@@ -196,44 +197,10 @@ html, body {
     background-color: #56CCF2;
     border: none;
     border-radius: .3em;
-    font-weight: bold;
 }
 
 .btn-primary:hover {
     background-color: #2D9CDB;
-}
-
-.tour-row {
-    border-bottom: 1px solid black;
-    padding-bottom: 1em;
-    margin-bottom: 1em;
-}
-
-.tour-row:last-child {
-    border: none;
-}
-
-.tour-item {
-    display: inline-block;
-    padding-right: .5em;
-}
-
-.tour-date {
-    color: #555;
-    width: 11%;
-    font-weight: bold;
-}
-
-.tour-city {
-    width: 24%;
-}
-
-.tour-arena {
-    width: 42%;
-}
-
-.tour-btn {
-    max-width: 19%;
 }
 
 .shop-item {
@@ -272,7 +239,6 @@ html, body {
 }
 
 .cart-header {
-    font-weight: bold;
     font-size: 1.25em;
     color: #333;
 }
