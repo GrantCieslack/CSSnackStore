@@ -46,9 +46,11 @@ function quantityChanged(event) {
     var input = event.target
     if (isNaN(input.value) || input.value <= 0) {
         input.value = 1
+        alert("There's a remove button for a reason")
     }
     else if (input.value >= 6){
         input.value = 5
+        alert("HEY! THAT'S TOO MANY ITEMS!")
     }
     updateCartTotal()
 }
