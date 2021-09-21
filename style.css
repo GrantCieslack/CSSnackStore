@@ -1,3 +1,20 @@
+@import url('https://fonts.googleapis.com/css?family=Raleway:300,400,700');
+@import url("https://fonts.googleapis.com/css?family=Metal+Mania");
+
+@font-face {
+    font-family: "Booter - Zero Zero";
+    src: url("Fonts/Booter - Zero Zero.woff") format("woff"),
+         url("Fonts/Booter - Zero Zero.woff2") format("woff2");
+    font-weight: normal;
+    font-style: normal;
+}
+
+* {
+    box-sizing: border-box;
+    font-family: Raleway;
+    color: #777;
+}
+
 #dew{
     background-image:url("Images/MoutainDew24.jpeg");
     background-size: 100% 100%;
@@ -32,6 +49,7 @@
     height: 100px;
 
 }
+<<<<<<< HEAD
 @import url('https://fonts.googleapis.com/css?family=Raleway:300,400,700');
 @import url("https://fonts.googleapis.com/css?family=Metal+Mania");
 
@@ -47,6 +65,21 @@
     box-sizing: border-box;
     font-family: Raleway;
     color: #777;
+=======
+#miniTartChock{
+    background-image:url("Images/tartChock.jpeg");
+    background-size: 100% 100%;
+    width: 100px;
+    height: 100px;
+
+}
+#miniTartberry{
+    background-image:url("Images/tartSharry.jpeg");
+    background-size: 100% 100%;
+    width: 100px;
+    height: 100px;
+
+>>>>>>> cf9a9e646a66f3d54d35468ad5fb9669421b7d4c
 }
 
 html, body {
@@ -93,6 +126,7 @@ html, body {
     padding-bottom: 30px;
 }
 
+<<<<<<< HEAD
 .band-name {
     text-align: center;
     margin: 0;
@@ -105,6 +139,9 @@ html, body {
 .band-name-large {
     font-size: 8em;
 }
+=======
+
+>>>>>>> cf9a9e646a66f3d54d35468ad5fb9669421b7d4c
 
 .content-section {
     margin: 1em;
@@ -123,6 +160,7 @@ html, body {
     font-size: 2.5em;
 }
 
+<<<<<<< HEAD
 .about-band-image {
     float: left;
     height: 200px;
@@ -130,6 +168,8 @@ html, body {
     margin: 15px;
     border-radius: 50%;
 }
+=======
+>>>>>>> cf9a9e646a66f3d54d35468ad5fb9669421b7d4c
 
 .main-footer {
     background-color: #56CCF2;
