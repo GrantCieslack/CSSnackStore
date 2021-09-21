@@ -55,7 +55,7 @@ function addToCartClicked(event) {
     var shopItem = button.parentElement.parentElement
     var title = shopItem.getElementsByClassName('shop-item-title')[0].innerText
     var price = shopItem.getElementsByClassName('shop-item-price')[0].innerText
-    var imageSrc = shopItem.getElementsByClassName('shop-item-image')[0].src
+    var imageSrc = shopItem.getElementsByClassName('shop-item-image')[0].id
     console.log(title, price, imageSrc)
     addItemToCart(title, price, imageSrc)
     updateCartTotal()
@@ -75,7 +75,7 @@ function addItemToCart(title, price, imageSrc){
     }
     var cartRowContent =`
     <div class="cart-item cart-column">
-        <img class="cart-item-image" src="${imageSrc}" width="100" height="100">
+        <div class="cart-item-image" id="${imageSrc}" width="100" height="100"> </div>
         <span class="cart-item-title">${title}</span>
     </div>
     <span class="cart-price cart-column">${price}</span>
