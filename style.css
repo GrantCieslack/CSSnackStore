@@ -7,6 +7,7 @@
     font-weight: normal;
     font-style: normal;
 }
+
 * {
     box-sizing: border-box;
     font-family: Raleway;
@@ -47,12 +48,14 @@
     background-size: 100% 100%;
     width: 100px;
     height: 100px;
+
 }
 #miniTartberry{
     background-image:url("Images/tartSharry.jpeg");
     background-size: 100% 100%;
     width: 100px;
     height: 100px;
+
 }
 html, body {
     margin: 0;
@@ -76,6 +79,7 @@ html, body {
     font-size: 1.1em;
     font-weight: lighter;
     border-bottom: 1px solid;
+
 }
 .main-nav li {
     padding: 0 5%;
@@ -95,10 +99,7 @@ h1{
     text-align: center;
     font-size: 3em;
 }
-.band-name-large {
-    font-size: 8em;
-    
-}
+
 .content-section {
     margin: 1em;
 }
@@ -108,12 +109,13 @@ h1{
     padding: 0 1.5em;
 }
 .section-header {
-    
+
     font-weight: normal;
     color: #333;
     text-align: center;
     font-size: 2.5em;
 }
+
 .main-footer {
     background-color: #56CCF2;
     color: white;
@@ -170,11 +172,12 @@ h1{
     background-color: #56CCF2;
     border: none;
     border-radius: .3em;
-    
+
 }
 .btn-primary:hover {
     background-color: #2D9CDB;
 }
+
 .shop-item {
     margin: 30px;
 }
@@ -205,7 +208,7 @@ h1{
     justify-content: space-around;
 }
 .cart-header {
-   
+
     font-size: 1.25em;
     color: #333;
 }
