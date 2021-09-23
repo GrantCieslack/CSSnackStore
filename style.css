@@ -94,7 +94,7 @@ main{
         display: block;
         overflow: auto;
 }
-form{
+fieldset{
     width:60%;
     display: grid;
     grid-template-rows: auto;
