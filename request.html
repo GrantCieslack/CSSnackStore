@@ -23,16 +23,21 @@
           </nav>
           <main>
               
-               <form method="Name" >
-                   <label for="myName">Name Of Product:</label>
-                   <input id="myName" placeholder="Your product please" type="text" required>
-                   <label for="myprice"> Price:</label>
-                   <input id="myprice" placeholder="The price" type="email" required>
-                   <label for="startDate">Link To Product:</label>
-                   <input id="myprice" placeholder="The link to product" type="email" required>
-                   <label for="myExperience">Why? :</label>
-                   <input id="myprice" placeholder="Reason why you want this product" type="text" required>                   
-                   <input type="submit" value="Submit Form" id=mySubmit>
+               <form action="mailto:banderbytes@gmail.com"  method="post" enctype="text/plain">
+                Product Name:<br>
+                <input type="text" name="name"><br>
+                Price: <br>
+                <input type="text" name="price"><br>
+                Link: <br>
+                <input type="text" name="link" size="50"><br><br>
+                Reason: <br>
+                <input type="text" name="reason" size="50">
+                EMail: <br>
+                <input type="mail" name="mail"><br>
+                
+                <input type="reset" value="Reset">
+                <input type="submit" value="Send">
+                
                </form>
            </main>
            <footer class="main-footer"></footer>
