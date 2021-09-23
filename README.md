@@ -6,3 +6,5 @@
 [CSS Help](https://www.youtube.com/watch?v=Sv_NAxi_jNs&list=PLZlA0Gpn_vH9D0J0Mtp6lIiD_8046k3si&t=0s)
 
 [HTML Help](https://www.youtube.com/watch?v=BvJYXl2ywUE&list=PLZlA0Gpn_vH8BoXcpCUvdmdPZFuR5y2lV&t=0s)
+
+[Request Info](https://github.com/dwyl/learn-to-send-email-via-google-script-html-no-server)
