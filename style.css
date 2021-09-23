@@ -11,7 +11,7 @@
 * {
     box-sizing: border-box;
     font-family: Raleway;
-    color: #777;
+    color: #333;
 }
 #dew{
     background-image:url("Images/MoutainDew24.jpeg");
@@ -74,6 +74,25 @@ html, body {
     color: white;
     text-decoration: none;
 }
+
+
+main{
+    padding-left: 0;
+        padding-right: 0;
+        padding-bottom: 2em;
+        padding-top: 0;
+        margin-left: 200px;
+        display: block;
+        overflow: auto;
+}
+form{
+    width:60%;
+    display: grid;
+    grid-template-rows: auto;
+    grid-template-columns: 12em 1fr;
+    grid-gap: 1em; gap:2em;
+}
+
 .main-nav {
     text-align: center;
     font-size: 1.1em;
