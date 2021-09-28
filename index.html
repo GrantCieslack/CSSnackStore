@@ -70,7 +70,7 @@
 
                     <div class="shop-item-details">
                         <span class="shop-item-price">$0.50</span>
-                        <button class="btn btn-primary shop-item-button" type="button">ADD TO CART</button>
+                        <button  class="btn btn-primary shop-item-button" type="button">ADD TO CART</button>
                     </div>
                 </div>
             </div>
@@ -111,7 +111,16 @@
                 <strong class="cart-total-title">Total</strong>
                 <span class="cart-total-price">$0.00</span>
             </div>
-            <button class="btn btn-primary btn-purchase" type="button">PURCHASE</button>
+            
+            <h2 class="section-header">Checkout</h2>
+            <p class ="cart-header centerText">Fill out the form below to send your response.</p>
+            <form class="mainForm" method="post" action="thank-you.html">
+                <label for="myName">Name:</label>
+                <input id="myName" placeholder= "Your name please" type="text" required>
+                <label for="myEmail">E-mail:</label>
+                <input id="myEmail" placeholder= "Your email please" type="email" required>
+                <button id=mySubmit  type="submit" class="btn btn-primary btn-purchase"  >PURCHASE</button>
+            </form>
         </section>
         <footer class="main-footer">
 
