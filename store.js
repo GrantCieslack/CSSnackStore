@@ -28,13 +28,19 @@ function ready() {
 }
 
 function purchaseClicked(){
-    alert('Thank your for your purchase')
-    var cartItems = document.getElementsByClassName('cart-items')[0]
-    while (cartItems.hasChildNodes ()){
-
-        cartItems.removeChild(cartItems.firstChild)
+    if  (document.getElementById("myName").value == "" || document.getElementById("myEmail").value == ""){
+        alert("Form not filled out correctly")
     }
-    updateCartTotal()
+    else//if(document.getElementById("myName").value !== "" && document.getElementById("myEmail").value !== "")
+    {
+        alert('Thank your for your purchase')
+        var cartItems = document.getElementsByClassName('cart-items')[0]
+
+        while (cartItems.hasChildNodes ()){
+            cartItems.removeChild(cartItems.firstChild)
+        }
+            updateCartTotal()
+        }
 }
 
 function removeCartItem(event) {

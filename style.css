@@ -85,7 +85,7 @@ main{
         display: block;
         overflow: auto;
 }
-form{
+#formRequest{
     width:60%;
     display: grid;
     grid-template-rows: auto;
@@ -227,7 +227,6 @@ h1{
     justify-content: space-around;
 }
 .cart-header {
-
     font-size: 1.25em;
     color: #333;
 }
@@ -310,4 +309,14 @@ h1{
     display: block;
     margin: 40px auto 80px auto;
     font-size: 1.75em;
+}
+
+.mainForm{
+    text-align: center;
+    padding: 10px;
+
+}
+
+.centerText{
+    text-align: center;
 }
