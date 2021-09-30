@@ -24,13 +24,14 @@ function ready() {
         button.addEventListener('click', addToCartClicked)
     }
 
-    document.getElementsByClassName('btn-purchase')[0]('click', purchaseClicked)
+    document.getElementsByClassName('btn-purchase')[0].addEventListener('click', purchaseClicked)
 }
 
 function purchaseClicked(){
     alert('Thank your for your purchase')
     var cartItems = document.getElementsByClassName('cart-items')[0]
     while (cartItems.hasChildNodes ()){
+
         cartItems.removeChild(cartItems.firstChild)
     }
     updateCartTotal()
@@ -107,11 +108,13 @@ function updateCartTotal(){
     for (var i = 0; i < cartRows.length; i++){
         var cartRow = cartRows[i]
         var priceElement = cartRow.getElementsByClassName('cart-price')[0]
-        var quantityElement = cartRow.getElementsByClassName('cart-quantity-input')
-        [0]
+        var quantityElement = cartRow.getElementsByClassName('cart-quantity-input')[0]
+        var title = cartRow.getElementsByClassName('cart-item-title')[0].innerText
         var price = parseFloat(priceElement.innerText.replace('$', ''))
         var quantity = quantityElement.value
         console.log(price * quantity)
+        console.log(quantity)
+        console.log(title)
         total = total + (price * quantity)
     }
     total = Math.round(total * 100) / 100
