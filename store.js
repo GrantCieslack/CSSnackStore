@@ -31,6 +31,9 @@ function purchaseClicked(){
     if  (document.getElementById("myName").value == "" || document.getElementById("myEmail").value == ""){
         alert("Form not filled out correctly")
     }
+
+    
+
     else//if(document.getElementById("myName").value !== "" && document.getElementById("myEmail").value !== "")
     {
         alert('Thank your for your purchase')
@@ -41,6 +44,7 @@ function purchaseClicked(){
         }
             updateCartTotal()
         }
+
 }
 
 function removeCartItem(event) {
