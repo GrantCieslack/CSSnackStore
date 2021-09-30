@@ -77,7 +77,9 @@
             var thankYouMessage = form.querySelector(".thankyou_message");
             if (thankYouMessage) {
               thankYouMessage.style.display = "block";
+
             }
+            location.replace("thank-you.html")
           }
       };
       // url encode form data for sending as post data

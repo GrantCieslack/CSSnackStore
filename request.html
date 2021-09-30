@@ -5,6 +5,8 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-withh, initial-scale=1">
         <link rel="stylesheet" href="style.css">
+        <script src="google-apps-scripts.js" src="store.js"></script>
+
           <title>BanderBytes</title>
      </head>
      <header>
@@ -17,6 +19,7 @@
                 <li><a href="index.html">HOME</a></li>
                 <li><a href="about.html">ABOUT</a></li>
                 <li><a href="request.html">REQUEST</a></li>
+                
             </ul>
         </nav>
         <h1><a href="index.html">BanderBytes</a></h1>
@@ -65,14 +68,17 @@
                
          
                <button class="button-success pure-button button-xlarge">
-                 <i class="fa fa-paper-plane"></i>&nbsp;Send</button>
+                 <i class="fa fa-paper-plane" action=""></i>&nbsp;Send</button>
              </div>
          
              <!-- Customise the Thankyou Message People See when they submit the form: -->
-             <div class="thankyou_message" style="display:none;">
-               <h2><em>Thanks</em> for contacting us!
-                 We will get back to you soon!</h2>
+             <form>
+             <div style="display:none" class="thankyou_message">
+              <!-- You can customize the thankyou message by editing the code below -->
+              <h2><em>Thanks</em> for contacting us! We will get back to you soon!
+              </h2>
              </div>
+             </form>
          
            </form>
          
