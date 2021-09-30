@@ -8,3 +8,5 @@
 [HTML Help](https://www.youtube.com/watch?v=BvJYXl2ywUE&list=PLZlA0Gpn_vH8BoXcpCUvdmdPZFuR5y2lV&t=0s)
 
 [Request Info](https://github.com/dwyl/learn-to-send-email-via-google-script-html-no-server)
+
+[ToolTip](https://www.w3schools.com/css/css_tooltip.asp)
