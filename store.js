@@ -30,19 +30,29 @@ function ready() {
 }
 
 function purchaseClicked(){
-    alert('Thank your for your purchase')
     var cartItems = document.getElementsByClassName('cart-items')[0]
-
     var cartNumb1 = document.getElementsByClassName('cartNumb1')
     var title = cartNumb1.getElementsByClassName('cart-item-title')[0].innerText
     var price = cartNumb1.getElementsByClassName('cart-item-price')[0].innerText
     console.log(title, price)
-    while (cartItems.hasChildNodes ()){
-        //console.log(cartItems.firstChild)
-        //console.log(title, price, imageSrc)
-        cartItems.removeChild(cartItems.firstChild)
+
+    for(i=10;i=0;i--){
+        
     }
-    updateCartTotal()
+    
+    if  (document.getElementById("myName").value == "" || document.getElementById("myEmail").value == ""){
+        alert("Form not filled out correctly")
+    }
+    else if(document.getElementById("myName").value !== "" && document.getElementById("myEmail").value !== "")
+    {
+        alert('Thank your for your purchase')
+        var cartItems = document.getElementsByClassName('cart-items')[0]
+
+        while (cartItems.hasChildNodes ()){
+            cartItems.removeChild(cartItems.firstChild)
+        }
+            updateCartTotal()
+        }
 }
 
 function removeCartItem(event) {
@@ -77,7 +87,7 @@ function addToCartClicked(event) {
     updateCartTotal()
 }
 
-function addItemToCart(title, price, imageSrc, cartNumb){
+function addItemToCart(title, price, imageSrc, cartNumb,){
     console.log(cartNumb)
     var cartRow = document.createElement('div')
     cartRow.classList.add('cart-row')
@@ -97,7 +107,7 @@ function addItemToCart(title, price, imageSrc, cartNumb){
 
         <div class="cart-item-image" id="${imageSrc}" width="100" height="100"></div>
 
-        <span class="cart-item-title">${title}</span>
+        <span class="cart-item-title cartNumb${cartNumb}">${title}</span>
     </div>
     <span class="cart-price cart-column cartNumb${cartNumb}">${price}</span>
     <div class="cart-quantity cart-column">
