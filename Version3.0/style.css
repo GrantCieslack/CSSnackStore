@@ -8,39 +8,11 @@
     font-style: normal;
 }
 
-/* Tooltip container */
-.tooltip {
-  position: relative;
-  display: inline-block;
-  border-bottom: 1px dotted black; /* If you want dots under the hoverable text */
-}
-
-/* Tooltip text */
-.tooltip .tooltiptext {
-  visibility: hidden;
-  width: 120px;
-  background-color: black;
-  color: #fff;
-  text-align: center;
-  padding: 5px 0;
-  border-radius: 6px;
- 
-  /* Position the tooltip text - see examples below! */
-  position: absolute;
-  z-index: 1;
-}
-
-/* Show the tooltip text when you mouse over the tooltip container */
-.tooltip:hover .tooltiptext {
-  visibility: visible;
-}
-
 * {
     box-sizing: border-box;
     font-family: Raleway;
     color: #333;
 }
-
 #dew{
     background-image:url("Images/MoutainDew24.jpeg");
     background-size: 100% 100%;
@@ -113,7 +85,7 @@ main{
         display: block;
         overflow: auto;
 }
-#formRequest{
+fieldset{
     width:60%;
     display: grid;
     grid-template-rows: auto;
@@ -255,6 +227,7 @@ h1{
     justify-content: space-around;
 }
 .cart-header {
+
     font-size: 1.25em;
     color: #333;
 }
@@ -337,14 +310,4 @@ h1{
     display: block;
     margin: 40px auto 80px auto;
     font-size: 1.75em;
-}
-
-.mainForm{
-    text-align: center;
-    padding: 10px;
-
-}
-
-.centerText{
-    text-align: center;
 }
