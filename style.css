@@ -348,3 +348,17 @@ h1{
 .centerText{
     text-align: center;
 }
+.request-form{
+    width: 60%;
+    margin-left: 20%;
+}
+.pure-group{
+    margin-left: 20%;
+}
+.pure-button{
+    margin-left: 25%;
+    padding-top: 10px;
+}
+.form-elements{
+    margin-left: 20%;
+}
