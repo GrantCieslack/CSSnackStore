@@ -17,21 +17,23 @@
             <h1 >BanderBytes</h1>
         </header>
         <section class="container content-section">
-            <h2 class="section-header">Food</h2>
+            <!-- <h2 class="section-header">Food</h2> use for sections-->
+            <div class="shop-items">
                 <div class="shop-item">
                     <span class="shop-item-title">MTN Dew </span>
                     <div id="dew" class="shop-item-image"></div>
                     <div class="shop-item-details">
                         <span class="shop-item-price">$2.00</span>
-                        <button class="btn btn-primary shop-item-button" type="button">ADD TO CART</button>
                     </div>
+                        <button class="btn btn-primary shop-item-button" type="button">ADD TO CART</button>
+                </div>
                     <div class="shop-item">
                         <span class="shop-item-title">Cheez-It's</span>
                         <div id="cheese" class="shop-item-image"> </div>
                         <div class="shop-item-details">
                             <span class="shop-item-price">$0.50</span>
-                            <button class="btn btn-primary shop-item-button" type="button">ADD TO CART</button>
                         </div>
+                            <button class="btn btn-primary shop-item-button" type="button">ADD TO CART</button>
                     </div>
 
                 <div class="shop-item">
@@ -39,9 +41,8 @@
                     <div id="morecheese" class="shop-item-image"> </div>
                     <div class="shop-item-details">
                         <span class="shop-item-price">$0.50</span>
-                        <button class="btn btn-primary shop-item-button" type="button">ADD TO CART</button>
-
                     </div>
+                        <button class="btn btn-primary shop-item-button" type="button">ADD TO CART</button>
                 </div>
                 <div class="shop-item">
 
@@ -50,8 +51,8 @@
                     <div class="shop-item-details">
                         <span class="shop-item-price">$0.50</span>
 
-                        <button class="btn btn-primary shop-item-button" type="button">ADD TO CART</button>
                     </div>
+                        <button class="btn btn-primary shop-item-button" type="button">ADD TO CART</button>
                 </div>
 
 
@@ -61,8 +62,8 @@
 
                     <div class="shop-item-details">
                         <span class="shop-item-price">$0.50</span>
-                        <button class="btn btn-primary shop-item-button" type="button">ADD TO CART</button>
                     </div>
+                        <button class="btn btn-primary shop-item-button" type="button">ADD TO CART</button>
                 </div>
                 <div class="shop-item">
                     <span class="shop-item-title">Gold Fish Rainbow</span>
@@ -70,33 +71,11 @@
 
                     <div class="shop-item-details">
                         <span class="shop-item-price">$0.50</span>
-                        <button  class="btn btn-primary shop-item-button" type="button">ADD TO CART</button>
                     </div>
+                        <button  class="btn btn-primary shop-item-button" type="button">ADD TO CART</button>
                 </div>
             </div>
-        </section>
-        <section class="container content-section">
-
-            <!-- <h2 class="section-header">Merch Coming Soon</h2> -->
-<!--                Coming Soon 
-            <div class="shop-items">
-                <div class="shop-item">
-                    <span class="shop-item-title">T-Shirt</span>
-                    <img class="shop-item-image" src="Images/Shirt.png">
-                    <div class="shop-item-details">
-                        <span class="shop-item-price">$19.99</span>
-                        <button class="btn btn-primary shop-item-button" type="button">ADD TO CART</button>
-                    </div>
-                </div>
-                <div class="shop-item">
-                    <span class="shop-item-title">Coffee Cup</span>
-                    <img class="shop-item-image" src="Images/Cofee.png">
-                    <div class="shop-item-details">
-                        <span class="shop-item-price">$6.99</span>
-                        <button class="btn btn-primary shop-item-button" type="button">ADD TO CART</button>
-                    </div>
-                </div>
-            </div> -->
+        </div>
         </section>
         <section class="container content-section">
             <h2 class="section-header">CART</h2>
@@ -119,6 +98,10 @@
                 <input id="myName" placeholder= "Your name please" type="text" required>
                 <label for="myEmail">E-mail:</label>
                 <input id="myEmail" placeholder= "Your email please" type="email" required>
+                <!-- TAKE DATA FROM CART -->
+                <input type="hidden" id="Items"> 
+                <input type="hidden" id="Quantities">
+                <input type="hidden" id="Prices">
                 <button id=mySubmit  type="submit" class="btn btn-primary btn-purchase"  >PURCHASE</button>
             </form>
         </section>

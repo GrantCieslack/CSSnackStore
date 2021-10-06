@@ -64,8 +64,10 @@ function quantityChanged(event) {
 }
 
 function addToCartClicked(event) {
+    //event.target
     var button = event.target
-    var shopItem = button.parentElement.parentElement
+    //.parentElement is like .. in powershell
+    var shopItem = button.parentElement
     var title = shopItem.getElementsByClassName('shop-item-title')[0].innerText
     var price = shopItem.getElementsByClassName('shop-item-price')[0].innerText
     var imageSrc = shopItem.getElementsByClassName('shop-item-image')[0].id
