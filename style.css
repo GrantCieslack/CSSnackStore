@@ -93,7 +93,9 @@ main{
     grid-template-columns: 12em 1fr;
     grid-gap: 1em; gap:2em;
 }
-
+a{
+    text-decoration: none;
+}
 .main-nav {
     text-align: center;
     font-size: 1.1em;
@@ -118,6 +120,7 @@ h1{
     color: #333;
     text-align: center;
     font-size: 3em;
+    text-decoration: none;
 }
 
 .content-section {

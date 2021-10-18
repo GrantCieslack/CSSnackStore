@@ -41,6 +41,19 @@ function purchaseClicked(){
         }
             updateCartTotal()
         }
+
+        /*
+        purchase clicked should:
+        take cartRow html and move it to checkout page
+        redirect to checkout page
+        fill info in invisible form
+
+        checkout page should not allow item removal, maybe have a back button that puts items back in cart
+        purchase form should have req name and email
+        form should somehow send data to database and/email
+        maybe use Justis's google sheet first but def not for long
+        update stock on admin page when/if thats linked to a database
+        */
 }
 
 function removeCartItem(event) {
