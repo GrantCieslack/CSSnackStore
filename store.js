@@ -43,14 +43,10 @@ function purchaseClicked(){
     if  (document.getElementById("myName").value == "" || document.getElementById("myEmail").value == ""){
         alert("Form not filled out correctly")
     }
-<<<<<<< HEAD
-    else if(document.getElementById("myName").value !== "" && document.getElementById("myEmail").value !== "")
-=======
-
-    
+   
 
     else//if(document.getElementById("myName").value !== "" && document.getElementById("myEmail").value !== "")
->>>>>>> e7807fee0f9366032db96501400faf414e844f55
+
     {
         alert('Thank your for your purchase')
         var cartItems = document.getElementsByClassName('cart-items')[0]
@@ -61,6 +57,18 @@ function purchaseClicked(){
             updateCartTotal()
         }
 
+        /*
+        purchase clicked should:
+        take cartRow html and move it to checkout page
+        redirect to checkout page
+        fill info in invisible form
+
+        checkout page should not allow item removal, maybe have a back button that puts items back in cart
+        purchase form should have req name and email
+        form should somehow send data to database and/email
+        maybe use Justis's google sheet first but def not for long
+        update stock on admin page when/if thats linked to a database
+        */
 }
 
 function removeCartItem(event) {
@@ -84,8 +92,10 @@ function quantityChanged(event) {
 }
 
 function addToCartClicked(event) {
+    //event.target
     var button = event.target
-    var shopItem = button.parentElement.parentElement
+    //.parentElement is like .. in powershell
+    var shopItem = button.parentElement
     var title = shopItem.getElementsByClassName('shop-item-title')[0].innerText
     var price = shopItem.getElementsByClassName('shop-item-price')[0].innerText
     var imageSrc = shopItem.getElementsByClassName('shop-item-image')[0].id
