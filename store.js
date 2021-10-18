@@ -4,6 +4,8 @@ if(document.readyState == 'loading'){
     ready()
 }
 
+let cartNumb = 0
+
 function ready() {
     var removeCartButtons = document.getElementsByClassName('btn-remove')
     console.log(removeCartButtons)
@@ -28,10 +30,23 @@ function ready() {
 }
 
 function purchaseClicked(){
+    var cartItems = document.getElementsByClassName('cart-items')[0]
+    var cartNumb1 = document.getElementsByClassName('cartNumb1')
+    var title = cartNumb1.getElementsByClassName('cart-item-title')[0].innerText
+    var price = cartNumb1.getElementsByClassName('cart-item-price')[0].innerText
+    console.log(title, price)
+
+    for(i=10;i=0;i--){
+        
+    }
+    
     if  (document.getElementById("myName").value == "" || document.getElementById("myEmail").value == ""){
         alert("Form not filled out correctly")
     }
+   
+
     else//if(document.getElementById("myName").value !== "" && document.getElementById("myEmail").value !== "")
+
     {
         alert('Thank your for your purchase')
         var cartItems = document.getElementsByClassName('cart-items')[0]
@@ -84,31 +99,35 @@ function addToCartClicked(event) {
     var title = shopItem.getElementsByClassName('shop-item-title')[0].innerText
     var price = shopItem.getElementsByClassName('shop-item-price')[0].innerText
     var imageSrc = shopItem.getElementsByClassName('shop-item-image')[0].id
+    cartNumb ++
     console.log(title, price, imageSrc)
-    addItemToCart(title, price, imageSrc)
+    addItemToCart(title, price, imageSrc, cartNumb)
     updateCartTotal()
 }
 
-function addItemToCart(title, price, imageSrc){
+function addItemToCart(title, price, imageSrc, cartNumb,){
+    console.log(cartNumb)
     var cartRow = document.createElement('div')
     cartRow.classList.add('cart-row')
     cartRow.innerText = title
     var cartItems = document.getElementsByClassName('cart-items')[0]
-    var cartItmeNames = cartItems.getElementsByClassName('cart-item-title')
-    for (var i = 0; i < cartItmeNames.length; i++){
-        if(cartItmeNames[i].innerText == title){
+    var cartItemNames = cartItems.getElementsByClassName('cart-item-title')
+    for (var i = 0; i < cartItemNames.length; i++){
+        if(cartItemNames[i].innerText == title){
             alert('This item has already been added to the cart')
+            cartNumb --
             return
         }
     }
+    
     var cartRowContent =`
-    <div class="cart-item cart-column">
+    <div class="cart-item cart-column cartNumb${cartNumb}">
 
         <div class="cart-item-image" id="${imageSrc}" width="100" height="100"></div>
 
-        <span class="cart-item-title">${title}</span>
+        <span class="cart-item-title cartNumb${cartNumb}">${title}</span>
     </div>
-    <span class="cart-price cart-column">${price}</span>
+    <span class="cart-price cart-column cartNumb${cartNumb}">${price}</span>
     <div class="cart-quantity cart-column">
         <input class="cart-quantity-input" type="number" value="1">
         <button class="btn btn-danger" type="button">REMOVE</button>
