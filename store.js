@@ -30,26 +30,27 @@ function ready() {
 }
 
 function purchaseClicked(){
+    
+
     var cartItems = document.getElementsByClassName('cart-items')[0]
     
-    for(i=10;i=0;i--){
-        
-    }
     
     // if  (document.getElementById("myName").value == "" || document.getElementById("myEmail").value == ""){
     //     alert("Form not filled out correctly")
     // }
-   
-
-    //else//if(document.getElementById("myName").value !== "" && document.getElementById("myEmail").value !== "")
+    //else
 
     {
         alert('Thank your for your purchase')
         var cartItems = document.getElementsByClassName('cart-items')[0]
-        var cartNums = document.getElementsByClassName('cart-row')
-        for(i=0;i<cartNums;i++){
+        console.log("cart itmes = "+cartItems)
+        var cartNums = document.getElementsByClassName('itemInCart')[0]
+        console.log("cartnums = "+cartNums)
+        for(i=0;i<cartNums.length;i++){
+            console.log('kinda works')
             var currentItem = document.getElementsByClassName(cartNumb[i]).parentElement
-            console.log(currentItem.innerHTML)
+            alert("for loop works")
+            console.log(currentItem.innerText)
             console.log('-----------------')
         }
 
@@ -112,6 +113,7 @@ function addItemToCart(title, price, imageSrc, cartNumb){
     console.log(cartNumb)
     var cartRow = document.createElement('div')
     cartRow.classList.add('cart-row')
+    cartRow.classList.add('itemInCart')
     cartRow.innerText = title
     var cartItems = document.getElementsByClassName('cart-items')[0]
     var cartItemNames = cartItems.getElementsByClassName('cart-item-title')
