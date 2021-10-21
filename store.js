@@ -26,30 +26,32 @@ function ready() {
         button.addEventListener('click', addToCartClicked)
     }
 
-    document.getElementsByClassName('btn-purchase')[0].addEventListener('click', purchaseClicked)
+    document.getElementsByClassName('btn-checkout')[0].addEventListener('click', purchaseClicked)
 }
 
 function purchaseClicked(){
     var cartItems = document.getElementsByClassName('cart-items')[0]
-    var cartNumb1 = document.getElementsByClassName('cartNumb1')
-    var title = cartNumb1.getElementsByClassName('cart-item-title')[0].innerText
-    var price = cartNumb1.getElementsByClassName('cart-item-price')[0].innerText
-    console.log(title, price)
-
+    
     for(i=10;i=0;i--){
         
     }
     
-    if  (document.getElementById("myName").value == "" || document.getElementById("myEmail").value == ""){
-        alert("Form not filled out correctly")
-    }
+    // if  (document.getElementById("myName").value == "" || document.getElementById("myEmail").value == ""){
+    //     alert("Form not filled out correctly")
+    // }
    
 
-    else//if(document.getElementById("myName").value !== "" && document.getElementById("myEmail").value !== "")
+    //else//if(document.getElementById("myName").value !== "" && document.getElementById("myEmail").value !== "")
 
     {
         alert('Thank your for your purchase')
         var cartItems = document.getElementsByClassName('cart-items')[0]
+        var cartNums = document.getElementsByClassName('cart-row')
+        for(i=0;i<cartNums;i++){
+            var currentItem = document.getElementsByClassName(cartNumb[i]).parentElement
+            console.log(currentItem.innerHTML)
+            console.log('-----------------')
+        }
 
         while (cartItems.hasChildNodes ()){
             cartItems.removeChild(cartItems.firstChild)
@@ -58,6 +60,7 @@ function purchaseClicked(){
         }
 
         /*
+
         purchase clicked should:
         take cartRow html and move it to checkout page
         redirect to checkout page
@@ -105,7 +108,7 @@ function addToCartClicked(event) {
     updateCartTotal()
 }
 
-function addItemToCart(title, price, imageSrc, cartNumb,){
+function addItemToCart(title, price, imageSrc, cartNumb){
     console.log(cartNumb)
     var cartRow = document.createElement('div')
     cartRow.classList.add('cart-row')
