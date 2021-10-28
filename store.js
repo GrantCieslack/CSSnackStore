@@ -6,6 +6,12 @@ if(document.readyState == 'loading'){
 
 let cartNumb = 0
 
+const itemNames = JSON.parse(localStorage.itemNames || '[]');
+//let itemNames = []
+let itemQuants = []
+let itemPrices = []
+
+
 function ready() {
     var removeCartButtons = document.getElementsByClassName('btn-remove')
     console.log(removeCartButtons)
@@ -26,39 +32,43 @@ function ready() {
         button.addEventListener('click', addToCartClicked)
     }
 
-    document.getElementsByClassName('btn-checkout')[0].addEventListener('click', purchaseClicked)
 }
 
 function purchaseClicked(){
-    
 
     var cartItems = document.getElementsByClassName('cart-items')[0]
     
-    
-    // if  (document.getElementById("myName").value == "" || document.getElementById("myEmail").value == ""){
-    //     alert("Form not filled out correctly")
-    // }
-    //else
+    var cartItemContainer = document.getElementsByClassName('cart-items')[0]
+    var cartRows = cartItemContainer.getElementsByClassName('cart-row')
 
-    {
-        alert('Thank your for your purchase')
+    for(i=0;i<cartRows.length;i++){
+        var cartRow = cartRows[i]
+        var priceElement = cartRow.getElementsByClassName('cart-price')[0]
+        var quantityElement = cartRow.getElementsByClassName('cart-quantity-input')[0]
+        var title = cartRow.getElementsByClassName('cart-item-title')[0].innerText
+        var price = parseFloat(priceElement.innerText.replace('$', ''))
+        var quantity = quantityElement.value
+        itemNames.push(title)
+        itemQuants.push(quantity)
+        itemPrices.push(price)
+        localStorage.setItem(itemNames, itemNames)
+        alert(localStorage.getItem(itemNames))
+    }
+
+    // for(let i = 0; i < itemNames.length; i++){
+    //     console.log(itemNames[i]);
+    //   }
+    //   for(let i = 0; i < itemQuants.length; i++){
+    //     console.log(itemQuants[i]);
+    //   }
+    //   for(let i = 0; i < itemPrices.length; i++){
+    //     console.log(itemPrices[i]);
+    //   }
         var cartItems = document.getElementsByClassName('cart-items')[0]
-        console.log("cart itmes = "+cartItems)
-        var cartNums = document.getElementsByClassName('itemInCart')[0]
-        console.log("cartnums = "+cartNums)
-        for(i=0;i<cartNums.length;i++){
-            console.log('kinda works')
-            var currentItem = document.getElementsByClassName(cartNumb[i]).parentElement
-            alert("for loop works")
-            console.log(currentItem.innerText)
-            console.log('-----------------')
-        }
-
         while (cartItems.hasChildNodes ()){
             cartItems.removeChild(cartItems.firstChild)
         }
             updateCartTotal()
-        }
 
         /*
 
@@ -73,6 +83,48 @@ function purchaseClicked(){
         maybe use Justis's google sheet first but def not for long
         update stock on admin page when/if thats linked to a database
         */
+       
+}
+
+
+function checkout(){
+    console.log("its the for loop")
+    //set button to send data
+    document.getElementsByClassName('btn-purchase')[0].addEventListener('click', sendData)
+console.log(cartNumb)
+
+//localStorage might not work after page is changed
+//NEW PLAN: NEED TO USE JS TO TURN IndeX INTO CHECKOUT PAGE WITHOUT SWITCHING THE FILE
+    
+    //fill data into cart on checkout page
+    var cartRow = document.createElement('div')
+    cartRow.classList.add('cart-row')
+    var cartItems = document.getElementsByClassName('cart-items')[0] 
+    console.log(itemNames[0])
+    console.log(itemPrices[0])
+    console.log(itemQuants[0])
+    for(i=0;i<itemNames.length;i++){
+    // itemNames.push(title)
+    // itemQuants.push(quantity)
+    // itemPrices.push(price)
+    console.log("bad timing ig")
+    var cartRowContent =`
+    <div class="cart-item cart-column ">
+
+        <span class="cart-item-title">${itemNames[i]}</span>
+    </div>
+    <span class="cart-price cart-column">${itemPrices[i]}</span>
+    <div class="cart-quantity cart-column">
+        <p>${itemQuants[i]}</p>
+    </div>`
+    cartRow.innerHTML = cartRowContent
+    cartItems.append(cartRow)
+    }
+
+}
+
+function sendData(){
+    console.log('DATA SEND SUCCESSFUL')
 }
 
 function removeCartItem(event) {
@@ -107,36 +159,36 @@ function addToCartClicked(event) {
     console.log(title, price, imageSrc)
     addItemToCart(title, price, imageSrc, cartNumb)
     updateCartTotal()
+
+    document.getElementsByClassName('btn-checkout')[0].addEventListener('click', purchaseClicked)
 }
 
 function addItemToCart(title, price, imageSrc, cartNumb){
     console.log(cartNumb)
     var cartRow = document.createElement('div')
     cartRow.classList.add('cart-row')
-    cartRow.classList.add('itemInCart')
     cartRow.innerText = title
     var cartItems = document.getElementsByClassName('cart-items')[0]
     var cartItemNames = cartItems.getElementsByClassName('cart-item-title')
     for (var i = 0; i < cartItemNames.length; i++){
         if(cartItemNames[i].innerText == title){
             alert('This item has already been added to the cart')
-            cartNumb --
             return
         }
     }
     
     var cartRowContent =`
-    <div class="cart-item cart-column cartNumb${cartNumb}">
+    <div class="cart-item cart-column ">
 
         <div class="cart-item-image" id="${imageSrc}" width="100" height="100"></div>
 
-        <span class="cart-item-title cartNumb${cartNumb}">${title}</span>
+        <span class="cart-item-title">${title}</span>
     </div>
-    <span class="cart-price cart-column cartNumb${cartNumb}">${price}</span>
+    <span class="cart-price cart-column">${price}</span>
     <div class="cart-quantity cart-column">
         <input class="cart-quantity-input" type="number" value="1">
         <button class="btn btn-danger" type="button">REMOVE</button>
-    </div>'`
+    </div>`
     cartRow.innerHTML = cartRowContent
     cartItems.append(cartRow)
     cartRow.getElementsByClassName('btn-danger')[0].addEventListener('click',

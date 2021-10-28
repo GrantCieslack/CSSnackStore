@@ -2,10 +2,11 @@
     <head>
         <title>BanderBytes | Store</title>
         <meta name="description" content="This is the description">
+        <meta charset="utf-8">
         <link rel="stylesheet" href="style.css" />
         <script src="store.js" async></script>
     </head>
-    <body>
+    <body onload="checkout()"> 
         <header class="main-header">
             <nav class="main-nav nav">
                 <ul>
@@ -31,10 +32,10 @@
                 <span class="cart-total-price">$0.00</span>
             </div>
             
-
+            <!-- action="thank-you.html" -->
             <h2 class="section-header">Checkout</h2>
             <p class ="cart-header centerText">Fill out the form below to send your response.</p>
-            <form class="mainForm" method="post" action="thank-you.html">
+            <form class="mainForm" method="post" >
                 <label for="myName">Name:</label>
                 <input id="myName" placeholder= "Your name please" type="text" required>
                 <label for="myEmail">E-mail:</label>
