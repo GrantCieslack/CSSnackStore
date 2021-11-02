@@ -6,11 +6,11 @@ if(document.readyState == 'loading'){
 
 let cartNumb = 0
 
-const itemNames = JSON.parse(localStorage.itemNames || '[]');
-//let itemNames = []
+//const itemNames = JSON.parse(localStorage.itemNames || '[]');
+let itemNames = []
 let itemQuants = []
 let itemPrices = []
-
+let itemSources = []
 
 function ready() {
     var removeCartButtons = document.getElementsByClassName('btn-remove')
@@ -31,7 +31,7 @@ function ready() {
         var button = addToCartButtons[i]
         button.addEventListener('click', addToCartClicked)
     }
-
+    
 }
 
 function purchaseClicked(){
@@ -47,23 +47,18 @@ function purchaseClicked(){
         var quantityElement = cartRow.getElementsByClassName('cart-quantity-input')[0]
         var title = cartRow.getElementsByClassName('cart-item-title')[0].innerText
         var price = parseFloat(priceElement.innerText.replace('$', ''))
+        var imageSrc = cartRow.getElementsByClassName('cart-item-image')[0].id
         var quantity = quantityElement.value
         itemNames.push(title)
         itemQuants.push(quantity)
         itemPrices.push(price)
-        localStorage.setItem(itemNames, itemNames)
-        alert(localStorage.getItem(itemNames))
+        itemSources.push(imageSrc)
     }
+    localStorage.setItem("prices", JSON.stringify(itemPrices));
+    localStorage.setItem("names", JSON.stringify(itemNames));
+    localStorage.setItem("quants", JSON.stringify(itemQuants));
+    localStorage.setItem("srcs", JSON.stringify(itemSources));
 
-    // for(let i = 0; i < itemNames.length; i++){
-    //     console.log(itemNames[i]);
-    //   }
-    //   for(let i = 0; i < itemQuants.length; i++){
-    //     console.log(itemQuants[i]);
-    //   }
-    //   for(let i = 0; i < itemPrices.length; i++){
-    //     console.log(itemPrices[i]);
-    //   }
         var cartItems = document.getElementsByClassName('cart-items')[0]
         while (cartItems.hasChildNodes ()){
             cartItems.removeChild(cartItems.firstChild)
@@ -83,48 +78,45 @@ function purchaseClicked(){
         maybe use Justis's google sheet first but def not for long
         update stock on admin page when/if thats linked to a database
         */
-       
-}
-
-
-function checkout(){
-    console.log("its the for loop")
-    //set button to send data
-    document.getElementsByClassName('btn-purchase')[0].addEventListener('click', sendData)
-console.log(cartNumb)
-
-//localStorage might not work after page is changed
-//NEW PLAN: NEED TO USE JS TO TURN IndeX INTO CHECKOUT PAGE WITHOUT SWITCHING THE FILE
-    
-    //fill data into cart on checkout page
-    var cartRow = document.createElement('div')
-    cartRow.classList.add('cart-row')
-    var cartItems = document.getElementsByClassName('cart-items')[0] 
-    console.log(itemNames[0])
-    console.log(itemPrices[0])
-    console.log(itemQuants[0])
-    for(i=0;i<itemNames.length;i++){
-    // itemNames.push(title)
-    // itemQuants.push(quantity)
-    // itemPrices.push(price)
-    console.log("bad timing ig")
-    var cartRowContent =`
-    <div class="cart-item cart-column ">
-
-        <span class="cart-item-title">${itemNames[i]}</span>
-    </div>
-    <span class="cart-price cart-column">${itemPrices[i]}</span>
-    <div class="cart-quantity cart-column">
-        <p>${itemQuants[i]}</p>
-    </div>`
-    cartRow.innerHTML = cartRowContent
-    cartItems.append(cartRow)
+       checkout()
     }
 
+function checkout(){
+    itemNames = ["MTN Dew","Cheez-It's","Double Cheeze Snap'd"]
+    itemPrices = ["2","0.5","0.5"]
+    itemQuants = ["3","2","1"]
+    itemSources = ["dew","cheese","morecheese"]
+    localStorage.setItem("srcs", JSON.stringify(itemSources));
+    localStorage.setItem("prices", JSON.stringify(itemPrices));
+    localStorage.setItem("names", JSON.stringify(itemNames));
+    localStorage.setItem("quants", JSON.stringify(itemQuants));
+    localStorage.setItem("total", "12.00")
+    
+    var storedNames = JSON.parse(localStorage.getItem("names"));
+    var storedQuants = JSON.parse(localStorage.getItem("quants"));
+    var storedPrices = JSON.parse(localStorage.getItem("prices"));
+    var storedSources = JSON.parse(localStorage.getItem("srcs"));
+    for(var i = 0;i<storedNames.length;i++)fillCart(storedNames[i], storedPrices[i], storedQuants[i], storedSources[i])
+    document.getElementsByClassName('cart-total-price')[0].innerText = '$' + localStorage.total
 }
 
-function sendData(){
-    console.log('DATA SEND SUCCESSFUL')
+function fillCart(title, price, quant, src){
+    var cartRow = document.createElement('div')
+    cartRow.classList.add('cart-row')
+    cartRow.innerText = title
+    var cartItems = document.getElementsByClassName('checkout-items')[0]
+    var cartItemNames = cartItems.getElementsByClassName('cart-item-title')
+    var cartRowContent =`
+    <div class="cart-item cart-column ">
+        <div class="cart-item-image" id="${src}" width="100" height="100"></div>
+        <span class="cart-item-title">${title}</span>
+    </div>
+    <span class="cart-price cart-column">${price}</span>
+    <div class="cart-quantity cart-column">
+        <span class="checkout">${quant}</span>
+        </div>`
+    cartRow.innerHTML = cartRowContent
+    cartItems.append(cartRow)
 }
 
 function removeCartItem(event) {
@@ -163,8 +155,7 @@ function addToCartClicked(event) {
     document.getElementsByClassName('btn-checkout')[0].addEventListener('click', purchaseClicked)
 }
 
-function addItemToCart(title, price, imageSrc, cartNumb){
-    console.log(cartNumb)
+function addItemToCart(title, price, imageSrc){
     var cartRow = document.createElement('div')
     cartRow.classList.add('cart-row')
     cartRow.innerText = title
@@ -179,9 +170,7 @@ function addItemToCart(title, price, imageSrc, cartNumb){
     
     var cartRowContent =`
     <div class="cart-item cart-column ">
-
         <div class="cart-item-image" id="${imageSrc}" width="100" height="100"></div>
-
         <span class="cart-item-title">${title}</span>
     </div>
     <span class="cart-price cart-column">${price}</span>
@@ -215,4 +204,5 @@ function updateCartTotal(){
     }
     total = Math.round(total * 100) / 100
     document.getElementsByClassName('cart-total-price')[0].innerText = '$' + total
+    localStorage.setItem("total", total)
 }

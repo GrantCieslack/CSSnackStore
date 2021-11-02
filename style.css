@@ -299,6 +299,9 @@ h1{
     font-size: 1.2em;
     color: #333;
 }
+.checkout{
+    font-size: 1.2em;
+}
 .cart-quantity {
     width: 35%;
 }
