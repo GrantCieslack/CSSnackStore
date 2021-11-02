@@ -4,8 +4,6 @@ if(document.readyState == 'loading'){
     ready()
 }
 
-let cartNumb = 0
-
 //const itemNames = JSON.parse(localStorage.itemNames || '[]');
 let itemNames = []
 let itemQuants = []
@@ -108,7 +106,7 @@ function fillCart(title, price, quant, src){
     var cartItemNames = cartItems.getElementsByClassName('cart-item-title')
     var cartRowContent =`
     <div class="cart-item cart-column ">
-        <div class="cart-item-image" id="${src}" width="100" height="100"></div>
+        <div class="cart-item-image" id="${src}" width="50" height="50"></div>
         <span class="cart-item-title">${title}</span>
     </div>
     <span class="cart-price cart-column">${price}</span>
