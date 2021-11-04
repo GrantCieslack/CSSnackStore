@@ -27,13 +27,13 @@
             </div>
             <div class="cart-total">
                 <strong class="cart-total-title">Total</strong>
-                <span class="cart-total-price">$0.00</span>
+                <span class="cart-total-price purchaseTotal"></span>
             </div>
             
             <!-- action="thank-you.html" -->
             <h2 class="section-header">Checkout</h2>
             <p class ="cart-header centerText">Fill out the form below to send your response.</p>
-            <form class="mainForm" method="post" >
+            <form class="mainForm" id='checkoutForm' method="post" >
                 <label for="myName">Name:</label>
                 <input id="myName" placeholder= "Your name please" type="text" required>
                 <label for="myEmail">E-mail:</label>
