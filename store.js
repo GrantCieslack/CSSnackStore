@@ -4,6 +4,8 @@ if(document.readyState == 'loading'){
     ready()
 }
 
+let cartNumb = 0
+
 //const itemNames = JSON.parse(localStorage.itemNames || '[]');
 let itemNames = []
 let itemQuants = []
@@ -57,11 +59,12 @@ function purchaseClicked(){
     localStorage.setItem("quants", JSON.stringify(itemQuants));
     localStorage.setItem("srcs", JSON.stringify(itemSources));
 
-        var cartItems = document.getElementsByClassName('cart-items')[0]
-        while (cartItems.hasChildNodes ()){
-            cartItems.removeChild(cartItems.firstChild)
-        }
-            updateCartTotal()
+
+        // var cartItems = document.getElementsByClassName('cart-items')[0]
+        // while (cartItems.hasChildNodes ()){
+        //     cartItems.removeChild(cartItems.firstChild)
+        // }
+        //     updateCartTotal()
 
         /*
 
@@ -76,37 +79,42 @@ function purchaseClicked(){
         maybe use Justis's google sheet first but def not for long
         update stock on admin page when/if thats linked to a database
         */
-       checkout()
+       
     }
 
 function checkout(){
-    itemNames = ["MTN Dew","Cheez-It's","Double Cheeze Snap'd"]
-    itemPrices = ["2","0.5","0.5"]
-    itemQuants = ["3","2","1"]
-    itemSources = ["dew","cheese","morecheese"]
-    localStorage.setItem("srcs", JSON.stringify(itemSources));
-    localStorage.setItem("prices", JSON.stringify(itemPrices));
-    localStorage.setItem("names", JSON.stringify(itemNames));
-    localStorage.setItem("quants", JSON.stringify(itemQuants));
-    localStorage.setItem("total", "12.00")
+    // itemNames = ["MTN Dew","Cheez-It's","Double Cheeze Snap'd"]
+    // itemPrices = ["2","0.5","0.5"]
+    // itemQuants = ["3","2","1"]
+    // itemSources = ["dew","cheese","morecheese"]
+    // localStorage.setItem("srcs", JSON.stringify(itemSources));
+    // localStorage.setItem("prices", JSON.stringify(itemPrices));
+    // localStorage.setItem("names", JSON.stringify(itemNames));
+    // localStorage.setItem("quants", JSON.stringify(itemQuants));
+
+    
     
     var storedNames = JSON.parse(localStorage.getItem("names"));
     var storedQuants = JSON.parse(localStorage.getItem("quants"));
     var storedPrices = JSON.parse(localStorage.getItem("prices"));
     var storedSources = JSON.parse(localStorage.getItem("srcs"));
-    for(var i = 0;i<storedNames.length;i++)fillCart(storedNames[i], storedPrices[i], storedQuants[i], storedSources[i])
-    document.getElementsByClassName('cart-total-price')[0].innerText = '$' + localStorage.total
+
+    // document.getElementsByClassName('cart-total-price')[0].innerText = '$' + localStorage.total
+
+    for(var i = 0;i<storedNames.length;i++)fillCart(storedNames[i], storedPrices[i], storedQuants[i], storedSources[i], i)
+
+    fillForm(storedNames, storedQuants)
 }
 
-function fillCart(title, price, quant, src){
+function fillCart(title, price, quant, src, count){
     var cartRow = document.createElement('div')
     cartRow.classList.add('cart-row')
     cartRow.innerText = title
     var cartItems = document.getElementsByClassName('checkout-items')[0]
-    var cartItemNames = cartItems.getElementsByClassName('cart-item-title')
+    // var cartItemNames = cartItems.getElementsByClassName('cart-item-title')
     var cartRowContent =`
     <div class="cart-item cart-column ">
-        <div class="cart-item-image" id="${src}" width="50" height="50"></div>
+        <div class="cart-item-image" id="${src}" width="100" height="100"></div>
         <span class="cart-item-title">${title}</span>
     </div>
     <span class="cart-price cart-column">${price}</span>
@@ -115,6 +123,41 @@ function fillCart(title, price, quant, src){
         </div>`
     cartRow.innerHTML = cartRowContent
     cartItems.append(cartRow)
+
+    
+
+    var form = document.getElementById('checkoutForm')
+    
+    if(count==0){
+        var totalValue = localStorage.getItem(total)
+        var total = document.createElement('input')
+        total.classList.add('checkoutTotal')
+        total.type='hidden'
+        total.name="total"
+        total.value=localStorage.total
+        form.append(total)
+        document.getElementsByClassName('purchaseTotal')[0].innerText = '$' + localStorage.total
+
+    }
+    
+}
+
+function fillForm(names, quants){
+    var form = document.getElementById('checkoutForm')
+
+    var itemName = document.createElement('input')
+    itemName.name="items"
+    itemName.type='hidden'
+    itemName.value=names
+
+    var itemQuant = document.createElement('input')
+    itemQuant.name="quantities"
+    itemQuant.type='hidden'
+    itemQuant.value=quants
+
+
+    form.append(itemName)
+    form.append(itemQuant)
 }
 
 function removeCartItem(event) {

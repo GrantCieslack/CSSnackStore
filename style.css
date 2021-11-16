@@ -302,6 +302,9 @@ h1{
 .checkout{
     font-size: 1.2em;
 }
+#checkoutForm{
+    text-align: center;
+}
 .cart-quantity {
     width: 35%;
 }
