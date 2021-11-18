@@ -40,7 +40,18 @@
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
     color: #333;
 }
-
+#cookie{
+    background-image:url("Images/cookie.jpg");
+    background-size: 100% 100%;
+    width: 100px;
+    height: 100px;
+}
+#hotChoc{
+    background-image:url("Images/hotChoc.jpg");
+    background-size: 100% 100%;
+    width: 100px;
+    height: 100px;
+}
 #dew{
     background-image:url("Images/MoutainDew24.jpeg");
     background-size: 100% 100%;
@@ -168,9 +179,13 @@ h1{
 }
 
 .main-footer {
-    background-color: #56CCF2;
-    color: white;
-    padding: .25em 0;
+    background-color: #1677C3;
+    text-align: center;
+    padding-top: .25em;
+    padding-bottom: .25em;
+}
+.main-footer p{
+    color: #eee;
 }
 .main-footer-container {
     display: flex;
