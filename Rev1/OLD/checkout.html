@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="style.css">
+        <script src="store.js" async></script>
+        <title>Checkout</title>
+        <meta name="description"
+            content="BanderBytes checkout.">
+    </head>
+<body>
+    <header class="home">
+            <h1><a href="index.html">BanderBytes</a></h1>
+    </header>
+    <nav>
+        <ul>
+        <li><a href=index.html>Store</a></li>
+        <li><a href="cart.html">Cart</a></li>
+        <li><a href="checkout.html">Checkout</a></li>
+        <li><a href="form.html">form</a></li>
+        </ul>
+</nav>
+    <div id="wrapper">  
+        <main>
+            <h2>BanderBytes Checkout</h2>
+            <p>Fill out the form below to send your response.</p>
+            <form method="post" action="thank-you.html">
+                <label for="myName">Name:</label>
+                <input id="myName" placeholder= "Your name please" type="text" required>
+                <label for="myEmail">E-mail:</label>
+                <input id="myEmail" placeholder= "Your email please" type="email" required>
+                <button id=mySubmit>Send Now</button>
+            </form>
+            <section>
+                <form method="post"
+                action="form.html">
+                <input type="submit" value="Form">
+                </form>
+            </section>
+        </main>
+        <footer>
+        Copyright © 2021 BanderBytes<br>
+        <a href="mailto:j@tsiga.com">j@tsiga.com</a>
+        </footer>
+    </div>
+</body>
+</html>
