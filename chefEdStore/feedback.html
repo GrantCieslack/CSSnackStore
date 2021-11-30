@@ -33,7 +33,8 @@
          
            <form name="submit-to-google-sheet" class="gform pure-form pure-form-stacked">
              <!-- change the form action to your script url -->
-         
+            
+            <!-- Ask the user for their feedback-->>
              <div class="form-elements">
                <fieldset class="pure-group">
                  <label for="name">How was you experience with our CSS? </label>
@@ -52,7 +53,43 @@
                </fieldset>
 
                <fieldset class="pure-group">
-                <label for="rating"> What rating would you give us? </label>
+                <label for="why"> What did you like most about our store? </label>
+                <input id="why" name="requests"  class="request-form"
+                placeholder="" />
+              </fieldset>
+
+              <fieldset class="pure-group">
+                <label for="why"> Did we meet your expectations? </label>
+                <input id="why" name="requests"  class="request-form"
+                placeholder="" />
+              </fieldset>
+
+               <fieldset class="pure-group">
+                <label for="look"> How would you rate the design? </label>
+                <input name ="look" type="text" placeholder=" Design " list="look" required>
+                <datalist id="look">
+                  <option value="Could be better">
+                  <option value="It was Okay">
+                  <option value="Nice to look at">
+                  <option value="Good looking">
+                  <option value="Creative">
+                  </option>
+              </fieldset>
+
+              <fieldset class="pure-group">
+                <label for="usable"> How would you rate the store's usability? </label>
+                <input name ="usable" type="text" placeholder="Usability " list="usable" required>
+                <datalist id="usable">
+                  <option value="Bad">
+                  <option value="Ok">
+                  <option value="Good">
+                  <option value="great">
+                  <option value="Amazing">
+                  </option>
+              </fieldset>
+
+              <fieldset class="pure-group">
+                <label for="rating"> How would you rate us overall? </label>
                 <input name ="rating" type="text" placeholder="Overall Rating " list="rating" required>
                 <datalist id="rating">
                   <option value="1 Star">
