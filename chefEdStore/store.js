@@ -204,7 +204,13 @@ function addItemToCart(title, price, imageSrc){
     var cartItemNames = cartItems.getElementsByClassName('cart-item-title')
     for (var i = 0; i < cartItemNames.length; i++){
         if(cartItemNames[i].innerText == title){
-            alert('This item has already been added to the cart')
+        //make so clicks increase number by 1
+            var q = document.getElementById(title+'-quant')
+                q.value ++
+            if(q.value>=13){
+                alert("You can only order 12 of each cookie")
+                q.value --
+            }            
             return
         }
     }
@@ -216,7 +222,7 @@ function addItemToCart(title, price, imageSrc){
     </div>
     <span class="cart-price cart-column">${price}</span>
     <div class="cart-quantity cart-column">
-        <input class="cart-quantity-input" type="number" value="1">
+        <input id="${title}-quant" class="cart-quantity-input" type="number" value="1">
         <button class="btn btn-danger" type="button">REMOVE</button>
     </div>`
     cartRow.innerHTML = cartRowContent
