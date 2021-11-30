@@ -59,47 +59,16 @@ function purchaseClicked(){
     localStorage.setItem("quants", JSON.stringify(itemQuants));
     localStorage.setItem("srcs", JSON.stringify(itemSources));
 
-
-        // var cartItems = document.getElementsByClassName('cart-items')[0]
-        // while (cartItems.hasChildNodes ()){
-        //     cartItems.removeChild(cartItems.firstChild)
-        // }
-        //     updateCartTotal()
-
-        /*
-
-        purchase clicked should:
-        take cartRow html and move it to checkout page
-        redirect to checkout page
-        fill info in invisible form
-
-        checkout page should not allow item removal, maybe have a back button that puts items back in cart
-        purchase form should have req name and email
-        form should somehow send data to database and/email
-        maybe use Justis's google sheet first but def not for long
-        update stock on admin page when/if thats linked to a database
-        */
        
     }
 
 function checkout(){
-    // itemNames = ["MTN Dew","Cheez-It's","Double Cheeze Snap'd"]
-    // itemPrices = ["2","0.5","0.5"]
-    // itemQuants = ["3","2","1"]
-    // itemSources = ["dew","cheese","morecheese"]
-    // localStorage.setItem("srcs", JSON.stringify(itemSources));
-    // localStorage.setItem("prices", JSON.stringify(itemPrices));
-    // localStorage.setItem("names", JSON.stringify(itemNames));
-    // localStorage.setItem("quants", JSON.stringify(itemQuants));
 
-    
-    
     var storedNames = JSON.parse(localStorage.getItem("names"));
     var storedQuants = JSON.parse(localStorage.getItem("quants"));
     var storedPrices = JSON.parse(localStorage.getItem("prices"));
     var storedSources = JSON.parse(localStorage.getItem("srcs"));
 
-    // document.getElementsByClassName('cart-total-price')[0].innerText = '$' + localStorage.total
 
     for(var i = 0;i<storedNames.length;i++)fillCart(storedNames[i], storedPrices[i], storedQuants[i], storedSources[i], i)
 
@@ -111,7 +80,6 @@ function fillCart(title, price, quant, src, count){
     cartRow.classList.add('cart-row')
     cartRow.innerText = title
     var cartItems = document.getElementsByClassName('checkout-items')[0]
-    // var cartItemNames = cartItems.getElementsByClassName('cart-item-title')
     var cartRowContent =`
     <div class="cart-item cart-column ">
         <div class="cart-item-image" id="${src}" width="100" height="100"></div>
@@ -173,9 +141,9 @@ function quantityChanged(event) {
 
         alert("There's a remove button for a reason")
     }
-    else if (input.value >= 6){
-        input.value = 5
-        alert("HEY! THAT'S TOO MANY ITEMS!")
+    else if (input.value >= 13){
+        input.value = 12
+        alert("You can only order 12 of each cookie")
     }
     updateCartTotal()
 }
@@ -183,7 +151,7 @@ function quantityChanged(event) {
 function addToCartClicked(event) {
     //event.target
     var button = event.target
-    //.parentElement is like .. in powershell
+    //.parentElement is like cd.. in powershell
     var shopItem = button.parentElement
     var title = shopItem.getElementsByClassName('shop-item-title')[0].innerText
     var price = shopItem.getElementsByClassName('shop-item-price')[0].innerText
