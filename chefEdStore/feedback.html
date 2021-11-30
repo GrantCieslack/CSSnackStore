@@ -111,31 +111,20 @@
               form.addEventListener('submit', e => {
                 e.preventDefault()
                 fetch(scriptURL, { method: 'POST', body: new FormData(form)})
-                  .then(response => console.log('Success!', response))
+                  .then(response => window.location.replace("index.html"))
                   .catch(error => console.error('Error!', error.message))
               })
             </script>
 
-
-             <!-- Customise the Thankyou Message People See when they submit the form: -->
-             <form>
-             <div style="display:none" class="thankyou_message">
-              <!-- You can customize the thankyou message by editing the code below -->
-              <h2><em>Thanks</em> for contacting us! We will get back to you soon!
-              </h2>
-             </div>
-             </form>
-         
-           </form>
-         
-           <!-- Submit the Form to Google Using "AJAX" -->
-           <script data-cfasync="false" src="form-submission-handler.js"></script>
-         <!-- END -->
-         
          </body>
          </html>
 
            </main>
-           <footer class="main-footer"></footer>
+           <footer class="main-footer">
+            
+            <p>Copyright @ 2021 Computer Science in Collaboration with Culinary Arts</p>
+            <p>grant.cieslack@evsck12.com | joyce.tsiga@evsck12.com</p>
+         
+        </footer>
 </div>
 </html>   

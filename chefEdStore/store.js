@@ -157,7 +157,7 @@ function addToCartClicked(event) {
     var price = shopItem.getElementsByClassName('shop-item-price')[0].innerText
     var imageSrc = shopItem.getElementsByClassName('shop-item-image')[0].id
     cartNumb ++
-    console.log(title, price, imageSrc)
+    // console.log(title, price, imageSrc)
     addItemToCart(title, price, imageSrc, cartNumb)
     updateCartTotal()
 
@@ -212,9 +212,9 @@ function updateCartTotal(){
         var title = cartRow.getElementsByClassName('cart-item-title')[0].innerText
         var price = parseFloat(priceElement.innerText.replace('$', ''))
         var quantity = quantityElement.value
-        console.log(price * quantity)
-        console.log(quantity)
-        console.log(title)
+        // console.log(price * quantity)
+        // console.log(quantity)
+        // console.log(title)
         total = total + (price * quantity)
     }
     total = Math.round(total * 100) / 100
