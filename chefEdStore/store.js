@@ -14,7 +14,7 @@ let itemSources = []
 
 function ready() {
     var removeCartButtons = document.getElementsByClassName('btn-remove')
-    console.log(removeCartButtons)
+    // console.log(removeCartButtons)
     for (var i = 0; i< removeCartButtons.length; i++){
         var button = removeCartButtons[i]
         button.addEventListener('click', removeCartItem)
@@ -173,8 +173,8 @@ function quantityChanged(event) {
 
         alert("There's a remove button for a reason")
     }
-    else if (input.value >= 6){
-        input.value = 5
+    else if (input.value >= 7){
+        input.value = 6
         alert("HEY! THAT'S TOO MANY ITEMS!")
     }
     updateCartTotal()
@@ -189,7 +189,7 @@ function addToCartClicked(event) {
     var price = shopItem.getElementsByClassName('shop-item-price')[0].innerText
     var imageSrc = shopItem.getElementsByClassName('shop-item-image')[0].id
     cartNumb ++
-    console.log(title, price, imageSrc)
+    // console.log(title, price, imageSrc)
     addItemToCart(title, price, imageSrc, cartNumb)
     updateCartTotal()
 
@@ -204,7 +204,14 @@ function addItemToCart(title, price, imageSrc){
     var cartItemNames = cartItems.getElementsByClassName('cart-item-title')
     for (var i = 0; i < cartItemNames.length; i++){
         if(cartItemNames[i].innerText == title){
-            alert('This item has already been added to the cart')
+            //make so clicks increase number by 1
+            var q = document.getElementById(title+'-quant')
+            q.value ++
+            if(q.value>=13){
+                alert("You can only order 12 of each cookie")
+                q.value --
+            }
+            ('change', quantityChanged)
             return
         }
     }
@@ -216,7 +223,7 @@ function addItemToCart(title, price, imageSrc){
     </div>
     <span class="cart-price cart-column">${price}</span>
     <div class="cart-quantity cart-column">
-        <input class="cart-quantity-input" type="number" value="1">
+        <input id="${title}-quant" class="cart-quantity-input" type="number" value="1">
         <button class="btn btn-danger" type="button">REMOVE</button>
     </div>`
     cartRow.innerHTML = cartRowContent
@@ -238,9 +245,9 @@ function updateCartTotal(){
         var title = cartRow.getElementsByClassName('cart-item-title')[0].innerText
         var price = parseFloat(priceElement.innerText.replace('$', ''))
         var quantity = quantityElement.value
-        console.log(price * quantity)
-        console.log(quantity)
-        console.log(title)
+        // console.log(price * quantity)
+        // console.log(quantity)
+        // console.log(title)
         total = total + (price * quantity)
     }
     total = Math.round(total * 100) / 100
