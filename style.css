@@ -127,7 +127,7 @@ main{
         padding-right: 0;
         padding-bottom: 2em;
         padding-top: 0;
-        margin-left: 200px;
+        margin: auto;
         display: block;
         overflow: auto;
 }
