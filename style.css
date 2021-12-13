@@ -269,8 +269,8 @@ h1{
     margin-bottom: 15px;
 }
 .shop-item-image {
-    height: 5em;
-    width: 5em;
+    height: 50px;
+    width: 50px;
 }
 .shop-item-details {
     display: flex;
