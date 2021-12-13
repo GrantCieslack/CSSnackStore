@@ -145,6 +145,10 @@ function quantityChanged(event) {
         input.value = 12
         alert("You can only order 12 of each cookie")
     }
+    else if (input.value < 1){
+        input.value = 1
+        alert("You can't get a fraction of a cookie dude")
+    }
     updateCartTotal()
 }
 
