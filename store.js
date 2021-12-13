@@ -141,7 +141,7 @@ function quantityChanged(event) {
         removeCartItem()
         // alert("There's a remove button for a reason")
     }
-    else if (input.value >= 13){
+    else if (input.value > 12){
         input.value = 12
         alert("You can only order 12 of each cookie")
     }
@@ -149,6 +149,7 @@ function quantityChanged(event) {
         input.value = 1
         alert("You can't get a fraction of a cookie dude")
     }
+
     updateCartTotal()
 }
 
