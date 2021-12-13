@@ -41,25 +41,25 @@
     color: #333;
 }
 #chocChip{
-    background-image:url("Images/cookie.jpg");
+    background-image:url("images/cookie.jpg");
     background-size: 100% 100%;
     /* width: 200px;
     height: 200px; */
 }
 #sugarCookie{
-    background-image:url("Images/sugarCookie.jpg");
+    background-image:url("images/sugarCookie.jpg");
     background-size: 100% 100%;
     /* width: 200px;
     height: 200px; */
 }
 #oatCookie{
-    background-image:url("Images/oatmeal.jpg");
+    background-image:url("images/oatmeal.jpg");
     background-size: 100% 100%;
     /* width: 200px;
     height: 200px; */
 }
 #dew{
-    background-image:url("Images/MoutainDew24.jpeg");
+    background-image:url("images/MoutainDew24.jpeg");
     background-size: 100% 100%;
     width: 100px;
     height: 100px;
