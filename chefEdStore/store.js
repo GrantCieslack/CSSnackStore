@@ -137,14 +137,19 @@ function removeCartItem(event) {
 function quantityChanged(event) {
     var input = event.target
     if (isNaN(input.value) || input.value <= 0) {
-        input.value = 1
-
-        alert("There's a remove button for a reason")
+        // input.value = 1
+        removeCartItem()
+        // alert("There's a remove button for a reason")
     }
-    else if (input.value >= 13){
+    else if (input.value > 12){
         input.value = 12
         alert("You can only order 12 of each cookie")
     }
+    else if (input.value < 1){
+        input.value = 1
+        alert("You can't get a fraction of a cookie dude")
+    }
+
     updateCartTotal()
 }
 

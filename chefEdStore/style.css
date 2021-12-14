@@ -59,7 +59,7 @@
     height: 200px; */
 }
 #dew{
-    background-image:url("Images/MoutainDew24.jpeg");
+    background-image:url("images/MoutainDew24.jpeg");
     background-size: 100% 100%;
     width: 100px;
     height: 100px;
@@ -120,12 +120,14 @@ html, body {
     color: white;
     text-decoration: none;
 }
+
+
 main{
     padding-left: 0;
         padding-right: 0;
         padding-bottom: 2em;
         padding-top: 0;
-        margin-left: 200px;
+        margin: auto;
         display: block;
         overflow: auto;
 }
@@ -267,8 +269,8 @@ h1{
     margin-bottom: 15px;
 }
 .shop-item-image {
-    height: 20em;
-    width: 20em;
+    height: 100px;
+    width: 100px;
 }
 .shop-item-details {
     display: flex;
