@@ -116,12 +116,12 @@ function fillForm(names, quants){
     var itemName = document.createElement('input')
     itemName.name="items"
     itemName.type='hidden'
-    itemName.value=names
+    itemName.value= " "+names
 
     var itemQuant = document.createElement('input')
     itemQuant.name="quantities"
     itemQuant.type='hidden'
-    itemQuant.value=quants
+    itemQuant.value=" "+quants
 
 
     form.append(itemName)
