@@ -49,9 +49,9 @@
               
                 form.addEventListener('submit', e => {
                   e.preventDefault()
-                  alert("Order Sent!\nWait to be redirected to the Feedback page")
+                  alert("Order Sent!")
                   fetch(scriptURL, { method: 'POST', body: new FormData(form)})
-                    .then(response => window.location.replace("feedback.html"))
+                    .then(response => window.location.replace("index.html"))
                     .catch(error => console.error('Error!', error.message))
                 })
                 //console.log('Success!', response)
